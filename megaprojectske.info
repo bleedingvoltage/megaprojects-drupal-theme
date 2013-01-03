@@ -1,0 +1,10 @@
+; The name, description, version and screenshot used for this theme on the 
+; Appearance page at admin/appearance.
+
+name        = MegaProjects Kenya
+description = A fixed width custom theme for <a href="http://www.megaprojects.co.ke">MegaProjects Kenya</a> built on (Twitter) Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development. Influenced by the <a href="http://www.drupal.org/project/zen">Zen</a> and <a href="http://www.drupal.org/project/bootstrap">Bootstrap</a> Drupal themes.
+version     = 0.1
+
+; This theme is compatible with Drupal 7 core. And it is a sub-theme of Zen.
+
+core        = 7.x
