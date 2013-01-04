@@ -57,7 +57,7 @@
  *
  * @see template_preprocess()
  * @see template_preprocess_page()
- * @see megaprojects_preprocess_page()
+ * @see megaprojectske_preprocess_page()
  * @see template_process()
  */
 ?>

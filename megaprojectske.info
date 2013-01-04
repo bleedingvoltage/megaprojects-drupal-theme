@@ -4,16 +4,11 @@
 name        = MegaProjects Kenya
 description = A fixed width custom theme for <a href="http://www.megaprojects.co.ke">MegaProjects Kenya</a> built on (Twitter) Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development. Influenced by the <a href="http://www.drupal.org/project/zen">Zen</a> and <a href="http://www.drupal.org/project/bootstrap">Bootstrap</a> Drupal themes.
 version     = 0.1
-
-; This theme is compatible with Drupal 7 core. And it is a sub-theme of Zen.
-
 core        = 7.x
 engine      = phptemplate
 
-
-
-; This section lists the regions defined in MegaProject Kenya's default 
-; page.tpl.php and maintenance-page.tpl.php files. 
+; Regions defined in MegaProject Kenya's default page.tpl.php and 
+; maintenance-page.tpl.php files. 
 
 regions[header]         = Header
 regions[navigation]     = Navigation bar
@@ -22,14 +17,44 @@ regions[help]           = Help
 regions[content]        = Content
 regions[footer]         = Footer
 
-; The page_top and page_bottom regions are hidden, which means they will not
-; show up on the blocks administration page. But they are required in order for
-; the html.tpl.php to work properly.
+; The page_top and page_bottom regions are hidden. But they are required in 
+; order for the html.tpl.php to work properly.
 
 regions[page_top]       = Page top
 regions[page_bottom]    = Page bottom
 
 
+; Module stylesheets to remove.
+
+stylesheets[all][] = aggregator.css
+stylesheets[all][] = block.css
+stylesheets[all][] = book.css
+stylesheets[all][] = comment.css
+stylesheets[all][] = dblog.css
+stylesheets[all][] = field.css
+stylesheets[all][] = file.css
+stylesheets[all][] = filter.css
+stylesheets[all][] = forum.css
+stylesheets[all][] = help.css
+stylesheets[all][] = maintenance.css
+stylesheets[all][] = menu.css
+stylesheets[all][] = node.css
+stylesheets[all][] = om_maximenu.css
+stylesheets[all][] = openid.css
+stylesheets[all][] = panels.css
+stylesheets[all][] = poll.css
+stylesheets[all][] = search.css
+stylesheets[all][] = statistics.css
+stylesheets[all][] = syslog.css
+stylesheets[all][] = system.maintenance.css
+stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.messages.css
+stylesheets[all][] = system.theme.css
+stylesheets[all][] = taxonomy.css
+stylesheets[all][] = tracker.css
+stylesheets[all][] = update.css
+stylesheets[all][] = user.css
+stylesheets[all][] = views.css
 
 ; Various page elements output by the theme can be toggled on and off. The
 ; "features" control which of these check boxes display on the
@@ -40,8 +65,6 @@ features[] = logo
 features[] = name
 features[] = slogan
 features[] = favicon
-
-
 
 ; Set the default values of settings on the theme-settings.php form.
 
