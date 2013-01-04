@@ -1,0 +1,122 @@
+//
+// @file
+// Navigation styling.
+//
+
+//
+// Navigation bar
+//
+
+#navigation
+  .region-navigation
+    border-bottom: 1px solid $gray-light
+    border-top: 1px solid $gray-light
+  .block
+    margin-bottom: 0
+  // OM Maximenu block links
+  .block-om-maximenu
+    border-bottom: 1px solid $gray-light
+    .block-title
+      +element-invisible
+    .om-maximenu
+      overflow: hidden
+    .om-maximenu-edit
+      a
+        font-size: 0.8em
+        padding: 0 10px
+        text-decoration: none
+        text-transform: uppercase
+    ul.om-menu
+      float: left
+      margin: 0
+    li.om-leaf
+      float: left
+      list-style: none
+      .om-maximenu-content
+        background: #fff
+        display: none
+        padding: 10px
+        position: absolute
+        z-index: 500
+      &:hover
+        box-shadow: 0 0 3px #bbb
+        .om-maximenu-content
+          display: block
+    .om-link
+      display: block
+      height: 3em
+      padding: 0 10px
+      // Vertically center text
+      line-height: 3em
+      text-decoration: none
+      text-transform: uppercase
+      &:hover
+        color: #000080
+    .om-maximenu-content
+      box-shadow: 0 1px 1px #bbb
+  .block-menu-block
+    +zen-clear
+    height: 25px
+    .block-inner
+      background: #f2f2f2
+    .block-title
+      color: #333
+      float: left
+      font-size: 0.9em
+      font-weight: bold
+      line-height: 2em
+      margin: 0
+      padding: 0 10px
+      text-transform: uppercase
+    ul.menu
+      font-size: 0.9em
+      margin: 0
+      overflow: hidden
+    li.leaf
+      float: left
+      list-style: none      
+      a
+        color: #666
+        display: block
+        line-height: 2em
+        padding: 0 10px
+        text-decoration: none
+
+.not-front #navigation
+  // Navigation logo block
+  #block-block-3
+    +zen-grid-item(2, 1)
+    background: $gray-lighter
+    border-bottom: 1px solid $gray-lighter
+    .logo
+      height: 3em
+      line-height: 3em
+      padding: 0 10px
+      img
+        vertical-align: middle
+  #block-om-maximenu-om-maximenu-1
+    +zen-grid-item(5, 3)
+    ul.om-menu
+      border-left: 1px solid $gray-light
+
+//
+// Footer
+//
+
+#footer 
+  .block-menu-block 
+    ul.menu 
+      font-size: .9em
+      margin: 0
+    li.leaf
+      list-style: none
+      border-bottom: 1px dotted #666
+      a 
+        color: #c3c3c3
+        display: block
+        padding: 5px 0
+        text-decoration: none
+        &:hover 
+          color: $white
+    li.last
+      border-bottom: none

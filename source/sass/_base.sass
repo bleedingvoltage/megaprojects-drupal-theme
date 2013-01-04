@@ -1,0 +1,44 @@
+//
+// @file
+// "base" partial.
+//
+
+// Legacy IE support
+$legacy-support-for-ie6: false
+$legacy-support-for-ie7: false
+$legacy-support-for-ie8: true
+
+// Zen Grids variables
+$zen-auto-include-item-base: false
+$zen-box-sizing: content-box
+$zen-column-count: 7
+$zen-grid-width: 980px
+$zen-gutter-width: 0
+
+// Grays
+$black: #000
+$gray-darker: #080808
+$gray-dark: #999
+$gray: #bbb
+$gray-light: #dfdfdf
+$gray-lighter: #eee
+$white: #fff
+
+// Accent colors
+$blue: #007fff
+$blue-dark: #1f26b6
+$green: #3fb618
+$red: #ff0039
+$yellow: #ffa500
+$orange: #ff7518
+$pink: #e671b8
+$purple: #9954bb
+
+// Add Compass
+@import compass
+
+// Add the Zen Grids responsive layout mixins.
+@import zen
+
+// Import our custom mixins last.
+@import custom

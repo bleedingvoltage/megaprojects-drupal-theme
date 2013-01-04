@@ -26,6 +26,7 @@ regions[page_bottom]    = Page bottom
 ; CSS files for the theme.
 
 stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = public/css/application.css
 
 ; Module stylesheets to remove.
 
@@ -62,6 +63,7 @@ stylesheets[all][] = views.css
 ; JavaScripts for the theme.
 
 scripts[] = bootstrap/js/bootstrap.js
+
 ; Various page elements output by the theme can be toggled on and off. The
 ; "features" control which of these check boxes display on the
 ; admin/appearance config page. See the Drupal 7 Theme Guide for more info:

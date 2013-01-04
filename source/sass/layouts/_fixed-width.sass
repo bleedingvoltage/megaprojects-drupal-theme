@@ -1,0 +1,52 @@
+//
+// @file
+// Positioning for a fixed-width, desktop-centric layout.
+//
+
+//
+// Center the page.
+//
+
+.region-top,
+#page,
+.region-bottom 
+  margin-left: auto
+  margin-right: auto
+  width: $zen-grid-width
+
+//
+// Apply the shared properties of grid items in a single, efficient ruleset.
+//
+
+#header,
+#footer 
+  +zen-grid-item-base(20px)
+
+#navigation,
+#content
+  +zen-grid-item-base
+
+//
+// Containers for grid items and flow items.
+//
+
+#header,
+#main,
+#footer 
+  +zen-grid-container
+
+//
+// Navigation bar
+//
+
+#main 
+  // Move all the children of #main down to make room.
+  padding-top: 5em // 3 + 2
+  position: relative
+
+#navigation 
+  position: absolute
+  // Move the navbar up inside #main's padding.
+  top: 0
+  height: 3em
+  width: $zen-grid-width - $zen-gutter-width
