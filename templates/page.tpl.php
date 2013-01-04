@@ -65,7 +65,7 @@
 <div id="page">
 
   <header id="header" role="banner">
-    
+
     <?php if ($site_name || $site_slogan): ?>
       <hgroup id="name-and-slogan">
         <?php if ($site_name): ?>
@@ -86,6 +86,8 @@
 
   <div id="main">
 
+    <?php print $breadcrumb; ?>
+
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
       <h1 class="title" id="page-title"><?php print $title; ?></h1>
@@ -95,7 +97,6 @@
     <div id="content" class="column" role="main">
 
       <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
       <a id="main-content"></a>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
@@ -105,7 +106,7 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    
+
     </div><!-- /#content -->
 
     <div id="navigation">
