@@ -73,3 +73,7 @@ settings[megaprojectske_skip_link_text]       = Jump to navigation
 settings[megaprojectske_html5_respond_meta][] = respond
 settings[megaprojectske_html5_respond_meta][] = html5
 settings[megaprojectske_html5_respond_meta][] = meta
+
+; Add Panels layouts
+
+plugins[panels][layouts] = layouts
