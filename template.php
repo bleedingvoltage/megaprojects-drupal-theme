@@ -19,6 +19,7 @@ foreach ($includes as $include) {
     require_once $include->uri;
   }    
 }
+
 /**
  * Override or insert variables into the html template.
  *
@@ -182,11 +183,16 @@ function megaprojectske_process_maintenance_page(&$variables, $hook) {
 function megaprojectske_preprocess_node(&$variables, $hook) {
   // Add $unpublished variable.
   $variables['unpublished'] = (!$variables['status']) ? TRUE : FALSE;
-
   // Add pubdate to submitted variable.
   $variables['pubdate'] = '<time pubdate datetime="' . format_date($variables['node']->created, 'custom', 'c') . '">' . $variables['date'] . '</time>';
+
   if ($variables['display_submitted']) {
-    $variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['pubdate']));
+    if ($variables['teaser']) {
+      $variables['submitted'] = t('!datetime', array('!datetime' => $variables['pubdate']));
+    } else {
+      // $variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['pubdate']));
+      $variables['submitted'] = t('By !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['pubdate']));
+    }
   }
 
   // Add a class for the view mode.
@@ -328,6 +334,71 @@ function megaprojectske_process_block(&$variables, $hook) {
 }
 
 /**
+ * Override or insert variables into the table templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("table" in this case.)
+ */
+function megaprojectske_preprocess_table(&$variables, $hook) {
+  if (isset($variables['attributes']['class']) && is_string($variables['attributes']['class'])) {
+    // Convert classes to an array.
+    $variables['attributes']['class'] = explode(' ', $variables['attributes']['class']);
+  }
+  $variables['attributes']['class'][] = 'table';
+  $variables['attributes']['class'][] = 'table-striped'; 
+}
+
+/**
+ * Override or insert variables into the button templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("button" in this case.)
+ */
+function megaprojectske_preprocess_button(&$variables, $hook) {
+  $variables['element']['#attributes']['class'][] = 'btn';
+
+  if (isset($variables['element']['#value'])) {
+    $classes = array(
+      // Specifics
+      t('Save and add') => 'btn-info',
+      t('Add another item') => 'btn-info',
+      t('Add effect') => 'btn-primary',
+      t('Add and configure') => 'btn-primary',
+      t('Update style') => 'btn-primary',
+      t('Download feature') => 'btn-primary',
+
+      // Generals
+      t('Save') => 'btn-primary',
+      t('Apply') => 'btn-primary',
+      t('Create') => 'btn-primary',
+      t('Confirm') => 'btn-primary',
+      t('Submit') => 'btn-primary',
+      t('Export') => 'btn-primary',
+      t('Import') => 'btn-primary',
+      t('Restore') => 'btn-primary',
+      t('Rebuild') => 'btn-primary',
+      t('Search') => 'btn-primary',
+      t('Vote') => 'btn-primary',
+      t('Add') => 'btn-info',
+      t('Update') => 'btn-info',
+      t('Delete') => 'btn-danger',
+      t('Remove') => 'btn-danger',
+    );
+    
+    foreach ($classes as $search => $class) {
+      if (strpos($variables['element']['#value'], $search) !== false) {
+        $variables['element']['#attributes']['class'][] = $class;
+        break;
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_page_alter().
  *
  * Look for the last block in the region. This is impossible to determine from
@@ -374,3 +445,54 @@ function megaprojectske_form_node_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function megaprojectske_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $default_value = 'Search...';
+  $form['search_block_form']['#default_value'] = t($default_value);
+  $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = '" . $default_value . "';}";
+  $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == '" . $default_value . "') {this.value = '';}";
+}
+
+function megaprojectske_form_alter(&$form, &$form_state, $form_id) {
+  // Id's of forms that should be ignored
+  // TODO: Make this configurable?
+  $form_ids = array(
+    'node_delete_confirm',
+    'node_form',
+    'system_site_information_settings',
+    'user_profile_form',
+  );
+  
+  // Only wrap in container for certain form
+  if (isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form'])) {
+    $form['actions']['#theme_wrappers'] = array();
+  }
+}
+
+/**
+ * Override theme_breadrumb().
+ *
+ * Print breadcrumbs as a list, with separators.
+ */
+function megaprojectske_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+
+  if (!empty($breadcrumb)) {
+    $breadcrumbs = '<ul class="breadcrumb">';
+    
+    $count = count($breadcrumb) - 1;
+    foreach ($breadcrumb as $key => $value) {
+      if ($count != $key) {
+        $breadcrumbs .= '<li>' . $value . '<span class="divider">/</span></li>';
+      }
+      else{
+        $breadcrumbs .= '<li>' . $value . '</li>';
+      }
+    }
+    $breadcrumbs .= '</ul>';
+    
+    return $breadcrumbs;
+  }
+}
