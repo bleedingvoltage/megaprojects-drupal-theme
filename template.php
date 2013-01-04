@@ -5,6 +5,20 @@
  * theme.
  */
 
+$theme_path = drupal_get_path('theme', 'megaprojectske');
+require_once $theme_path . '/includes/pager.inc';
+require_once $theme_path . '/includes/theme.inc';
+require_once $theme_path . '/includes/form.inc';
+require_once $theme_path . '/includes/menu.inc';
+require_once $theme_path . '/includes/utility.inc';
+
+// Load module specific files in the modules directory.
+$includes = file_scan_directory($theme_path . '/includes/modules', '/\.inc$/');
+foreach ($includes as $include) {
+  if (module_exists($include->name)) {
+    require_once $include->uri;
+  }    
+}
 /**
  * Override or insert variables into the html template.
  *
