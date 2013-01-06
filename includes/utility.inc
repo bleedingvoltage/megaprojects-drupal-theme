@@ -4,8 +4,9 @@
  * Miscellaneous functions.
  */
 
-function megaprojectske_image_field_view_value($entity, $field_name, $item, $image_style, $type = 'image') {
-  return field_view_value('node', $entity, $field_name, $item, array(
+function megaprojectske_image_field_view_value($entity, $field_name, $image_style, $type = 'image') {
+  return field_view_field('node', $entity, $field_name, array(
+    'label' => 'hidden',
     'type' => $type,
     'settings' => array(
       'image_style' => $image_style,
@@ -13,8 +14,9 @@ function megaprojectske_image_field_view_value($entity, $field_name, $item, $ima
   ));
 }
 
-function megaprojectske_smart_trim_field_view_value($entity, $field_name, $item, $trim_length, $more_link = false, $more_text = 'Read more', $trim_type = 'chars', $trim_suffix = '...') {
-  return field_view_value('node', $entity, $field_name, $item, array(
+function megaprojectske_smart_trim_field_view_value($entity, $field_name, $trim_length, $more_link = false, $more_text = 'Read more', $trim_type = 'chars', $trim_suffix = '...') {
+  return field_view_field('node', $entity, $field_name, array(
+    'label' => 'hidden',
     'type' => 'smart_trim_format',
     'settings' => array(
       'trim_length' => $trim_length,

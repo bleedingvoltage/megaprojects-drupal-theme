@@ -82,16 +82,12 @@
  * @see megaprojectske_preprocess_node()
  * @see template_process()
  */
+
+$style_name = 'recent';
+$image_path = image_style_url($style_name, $field_image[0]['uri']);      
 ?>
 
-<article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <div class="article-image">
-    <?php
-      $article_image = megaprojectske_image_field_view_value($node, 'field_image', $field_image[0], 'recent');
-      print render($article_image);
-    ?>
-  </div>
+<article style="background-image: url('<?php print $image_path; ?>')" class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
     <header>
@@ -113,7 +109,5 @@
       <?php endif; ?>
     </header>
   <?php endif; ?>
-
-  <?php print render($content['links']); ?>
-
+  
 </article><!-- /.node -->

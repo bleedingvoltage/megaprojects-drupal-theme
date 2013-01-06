@@ -82,18 +82,12 @@
  * @see megaprojectske_preprocess_node()
  * @see template_process()
  */
+
+$style_name = ($view->result[0]->nid == $node->nid ? 'recent-large' : ($view->result[1]->nid == $node->nid ? 'recent' : 'recent-medium')); 
+$image_path = image_style_url($style_name, $field_image[0]['uri']);
 ?>
 
-<article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <div class="article-image">
-    <?php
-      // If this is the first or second result in the view, render a different image style
-      $image_style = ($view->result[0]->nid == $node->nid ? 'recent-wide' : ($view->result[1]->nid == $node->nid ? 'recent' : 'recent-medium'));
-      $article_image = megaprojectske_image_field_view_value($node, 'field_image', $field_image[0], $image_style);
-      print render($article_image);
-    ?>
-  </div>
+<article style="background-image: url('<?php print $image_path; ?>')" class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
     <header>
@@ -115,7 +109,5 @@
       <?php endif; ?>
     </header>
   <?php endif; ?>
-
-  <?php print render($content['links']); ?>
 
 </article><!-- /.node -->

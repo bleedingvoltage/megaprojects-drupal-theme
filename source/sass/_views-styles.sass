@@ -5,10 +5,6 @@
 
 // "Banner" view
 .view-banner
-  article
-    .field-name-field-image
-      img
-        vertical-align: middle
 
 // "Recent" view
 .view-recent
@@ -17,28 +13,26 @@
     float: left
     width: $column_width
   article
-    height: 245px
+    background-repeat: no-repeat    
     position: relative
-    .article-image
-      left: 0
-      position: absolute
-      top: 0
-      z-index: -1
-      img
-        vertical-align: middle
-    header
-      padding: 10px
-    h2.node-title
-      +text-shadow(0 1px 1px $black)
-      font-weight: normal
-      line-height: 1.25em
-      a
-        color: $white
-        text-decoration: none
-    .submitted
-      +text-shadow(0 1px 1px $black)
+  header
+    background: rgba(0,0,0, .5)
+    height: 245px
+    &:hover
+      background: rgba(0,0,0, .25)
+  h2.node-title
+    +text-shadow(0 1px 1px $black)
+    line-height: 1.25em
+    margin: 0
+    padding: 10px
+    a
       color: $white
-      margin: 0
+      &:hover
+        text-decoration: none
+  .submitted
+    +text-shadow(0 1px 1px $black)
+    color: $white
+    padding: 0 10px
   // Block 1
   &.view-display-id-block_1
     // Span 3 columns
@@ -51,16 +45,6 @@
       
 // "Popular" view
 .view-popular
-  article
-    h2.node-title
-      font-size: 1em
-      font-weight: normal
-      line-height: 1.25
-      a
-        color: $black
-        text-decoration: none
-    .submitted
-      margin: 0
   // Block 1
   &.view-display-id-block_1
     .view-content
@@ -68,21 +52,39 @@
     ul
       margin: 0
     li.views-row
-      list-style: none
       border-bottom: 1px dotted $green
+      list-style: none
     li.views-row-last
       border-bottom: none
     article
-      text-align: center
       padding: 10px 0
+      text-align: center
     h2.node-title
+      font-size: 1em
+      line-height: 1.25
       margin: 0
+      a
+        color: $black
+        text-decoration: none
+    .submitted
+      margin: 5px 0 0
     .pagination 
       margin: 10px 0
 
 // "Highlight" view
 .view-highlight
-  background: #f9f9f9
-  box-shadow: 0 0 1px 0 $black
-  .article-body
-    padding: 10px 20px 20px
+  margin: 0
+  article
+    padding: 20px
+
+// "Gallery" view
+.view-gallery
+  margin: 0
+  .views-row
+    float: left
+    width: 196px
+  .carousel-control
+    +border-radius(0)
+    line-height: 26px
+    top: 50%
+

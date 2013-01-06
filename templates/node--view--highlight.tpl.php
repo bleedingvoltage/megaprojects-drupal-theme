@@ -82,52 +82,36 @@
  * @see megaprojectske_preprocess_node()
  * @see template_process()
  */
+
+$article_image = megaprojectske_image_field_view_value($node, 'field_image', 'highlight');
+$article_content = megaprojectske_smart_trim_field_view_value($node, 'body', 400);
 ?>
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <div class="article-image">
-    <?php 
-      $article_image = megaprojectske_image_field_view_value($node, 'field_image', $field_image[0], 'highlight');
-      print render($article_image); 
-    ?>
-  </div>
+  <?php print render($article_image); ?>
 
-  <div class="article-body">
-    <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
-      <header>
-        <?php print render($title_prefix); ?>
-        <?php if (!$page && $title): ?>
-          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
+  <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
+    <header>
+      <?php print render($title_prefix); ?>
+      <?php if (!$page && $title): ?>
+        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?>
 
-        <?php if ($display_submitted): ?>
-          <p class="submitted">
-            <?php print $user_picture; ?>
-            <?php print $submitted; ?>
-          </p>
-        <?php endif; ?>
+      <?php if ($display_submitted): ?>
+        <p class="submitted">
+          <?php print $user_picture; ?>
+          <?php print $submitted; ?>
+        </p>
+      <?php endif; ?>
 
-        <?php if ($unpublished): ?>
-          <p class="unpublished"><?php print t('Unpublished'); ?></p>
-        <?php endif; ?>
-      </header>
-    <?php endif; ?>
+      <?php if ($unpublished): ?>
+        <p class="unpublished"><?php print t('Unpublished'); ?></p>
+      <?php endif; ?>
+    </header>
+  <?php endif; ?>
 
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      //print render($content);
-
-      $article_content = megaprojectske_smart_trim_field_view_value($node, 'body', $body[0], 400);
-      print render($article_content); 
-    ?>
-
-    <?php print render($content['links']); ?>
-
-    <?php print render($content['comments']); ?>
-  <div>
+  <?php print render($article_content); ?>
 
 </article><!-- /.node -->
