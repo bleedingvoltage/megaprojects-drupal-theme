@@ -477,22 +477,28 @@ function megaprojectske_form_alter(&$form, &$form_state, $form_id) {
  * Print breadcrumbs as a list, with separators.
  */
 function megaprojectske_breadcrumb($variables) {
-  $breadcrumb = $variables['breadcrumb'];
+  $show_breadcrumb = theme_get_setting('megaprojectske_breadcrumb');
 
-  if (!empty($breadcrumb)) {
-    $breadcrumbs = '<ul class="breadcrumb">';
-    
-    $count = count($breadcrumb) - 1;
-    foreach ($breadcrumb as $key => $value) {
-      if ($count != $key) {
-        $breadcrumbs .= '<li>' . $value . '<span class="divider">/</span></li>';
+  if ($show_breadcrumb == 'yes' || $show_breadcrumb == 'admin' && arg(0) == 'admin') {
+    $breadcrumb = $variables['breadcrumb'];
+
+    if (!empty($breadcrumb)) {
+      $breadcrumbs = '<ul class="breadcrumb" role="navigation">';
+      
+      $count = count($breadcrumb) - 1;
+      foreach ($breadcrumb as $key => $value) {
+        if ($count != $key) {
+          $breadcrumbs .= '<li>' . $value . '<span class="divider">/</span></li>';
+        }
+        else {
+          $breadcrumbs .= '<li>' . $value . '</li>';
+        }
       }
-      else{
-        $breadcrumbs .= '<li>' . $value . '</li>';
-      }
+      $breadcrumbs .= '</ul>';
+      
+      return $breadcrumbs;
     }
-    $breadcrumbs .= '</ul>';
-    
-    return $breadcrumbs;
   }
+
+  return '';
 }

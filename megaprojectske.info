@@ -76,6 +76,7 @@ features[] = favicon
 
 ; Set the default values of settings on the theme-settings.php form.
 
+settings[megaprojectske_breadcrumb]           = yes
 settings[megaprojectske_skip_link_anchor]     = main-menu
 settings[megaprojectske_skip_link_text]       = Jump to navigation
 settings[megaprojectske_html5_respond_meta][] = respond
@@ -85,3 +86,12 @@ settings[megaprojectske_html5_respond_meta][] = meta
 ; Add Panels layouts
 
 plugins[panels][layouts] = layouts
+
+; Google fonts API
+
+fonts[google_fonts_api][] = "Open Sans&subset=latin#300"
+fonts[google_fonts_api][] = "Open Sans&subset=latin#300italic"
+fonts[google_fonts_api][] = "Open Sans&subset=latin#700"
+fonts[google_fonts_api][] = "Open Sans&subset=latin#700italic"
+fonts[google_fonts_api][] = "Open Sans&subset=latin#regular"
+fonts[google_fonts_api][] = "Open Sans&subset=latin#italic"
