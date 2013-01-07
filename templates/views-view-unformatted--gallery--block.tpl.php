@@ -11,10 +11,9 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 
-<?php 
+<?php
   $slides_max = count($rows) / 5;
   $counter = 0;
-  //$slides_items_max = count($rows) / 5; 
 ?>
 
 <?php for ($i = 0; $i < $slides_max; $i++) : ?>
@@ -28,4 +27,4 @@
     <?php endforeach; ?>
   </div>
   <?php $counter++; ?>
-<? endfor; ?>
+<?php endfor; ?>
