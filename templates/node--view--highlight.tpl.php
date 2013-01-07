@@ -84,7 +84,7 @@
  */
 
 $article_image = megaprojectske_image_field_view_value($node, 'field_image', 'highlight');
-$article_content = megaprojectske_smart_trim_field_view_value($node, 'body', 400);
+$article_content = megaprojectske_smart_trim_field_view_value($node, 'body', 200);
 ?>
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
