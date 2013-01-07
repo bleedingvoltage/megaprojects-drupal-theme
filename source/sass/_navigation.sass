@@ -9,58 +9,68 @@
 
 #navigation
   .region-navigation
-    border-bottom: 1px solid $gray-light
     border-top: 1px solid $gray-light
   .block
     margin-bottom: 0
   // OM Maximenu block links
   .block-om-maximenu
-    border-bottom: 1px solid $gray-light
     .block-title
       +element-invisible
     .om-maximenu
       overflow: hidden
     .om-maximenu-edit
-      a
-        font-size: 0.8em
-        padding: 0 10px
-        text-decoration: none
-        text-transform: uppercase
+      +element-invisible
+      // a
+      //   font-size: 0.8em
+      //   padding: 0 10px
+      //   text-decoration: none
+      //   text-transform: uppercase
     ul.om-menu
       float: left
       margin: 0
     li.om-leaf
       float: left
-      list-style: none
-      .om-maximenu-content
-        background: #fff
-        display: none
-        padding: 10px
-        position: absolute
-        z-index: 500
       &:hover
-        box-shadow: 0 0 3px #bbb
+        box-shadow: 0 0 3px $gray
         .om-maximenu-content
           display: block
     .om-link
+      color: $black
       display: block
+      font-weight: 400
       height: 3em
-      padding: 0 10px
-      // Vertically center text
       line-height: 3em
+      padding: 0 20px
       text-decoration: none
       text-transform: uppercase
+      .caret
+        margin: 1.4em 0 0 0.4em
       &:hover
-        color: #000080
+        background: none
     .om-maximenu-content
-      box-shadow: 0 1px 1px #bbb
+      background: $white
+      display: none
+      position: absolute
+      z-index: 500
+      box-shadow: 0 2px 2px -1px #666
+      border-bottom: 3px solid $black
+      h3.title
+        +element-invisible
+      ul.menu
+        margin: 0
+        padding: 8px 0
+        width: 250px
+      li.leaf, 
+      li.active-trail
+        a
+          color: #555
+          padding: 10px 30px
   .block-menu-block
     +zen-clear
-    height: 25px
-    .block-inner
-      background: #f2f2f2
+    background: $black
+    height: 1.8em
     .block-title
-      color: #333
+      color: $white
       float: left
       font-size: 0.9em
       font-weight: bold
@@ -72,15 +82,16 @@
       font-size: 0.9em
       margin: 0
       overflow: hidden
-    li.leaf
-      float: left
-      list-style: none      
+    li.leaf,
+    li.active-trail
+      float: left      
       a
-        color: #666
-        display: block
+        color: $gray-lighter
         line-height: 2em
         padding: 0 10px
-        text-decoration: none
+        &:hover
+          background: none
+          color: $gray
 
 .not-front #navigation
   // Navigation logo block
@@ -94,6 +105,9 @@
       padding: 0 10px
       img
         vertical-align: middle
+  .block-om-maximenu
+    .om-link
+      padding: 0 18px
   #block-om-maximenu-om-maximenu-1
     +zen-grid-item(5, 3)
     ul.om-menu
@@ -108,7 +122,8 @@
     ul.menu 
       font-size: .9em
       margin: 0
-    li.leaf
+    li.leaf, 
+    li.active-trail
       list-style: none
       border-bottom: 1px dotted #666
       a 
@@ -117,6 +132,7 @@
         padding: 5px 0
         text-decoration: none
         &:hover 
+          background: none
           color: $white
     li.last
       border-bottom: none

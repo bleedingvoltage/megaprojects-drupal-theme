@@ -3,36 +3,35 @@
 // Views styling.
 //
 
-// "Banner" view
-.view-banner
-
 // "Recent" view
 .view-recent
   $column_width: $zen-grid-width / 4
-  .views-row
-    float: left
-    width: $column_width
-  article
-    background-repeat: no-repeat    
-    position: relative
-  header
-    background: rgba(0,0,0, .5)
-    height: 245px
-    &:hover
-      background: rgba(0,0,0, .25)
-  h2.node-title
-    +text-shadow(0 1px 1px $black)
-    line-height: 1.25em
-    margin: 0
-    padding: 10px
-    a
-      color: $white
+  &.view-display-id-block_1,
+  &.view-display-id-block_2
+    .views-row
+      float: left
+      width: $column_width
+    article
+      background-repeat: no-repeat    
+      position: relative
+    header
+      background: rgba(0,0,0, .5)
+      height: $column_width
       &:hover
-        text-decoration: none
-  .submitted
-    +text-shadow(0 1px 1px $black)
-    color: $white
-    padding: 0 10px
+        background: rgba(0,0,0, .25)
+    h2.node-title
+      +text-shadow(0 1px 1px $black)
+      line-height: 1.25em
+      margin: 0
+      padding: 10px
+      a
+        color: $white
+        &:hover
+          text-decoration: none
+    .submitted
+      +text-shadow(0 1px 1px $black)
+      color: $white
+      padding: 0 10px
   // Block 1
   &.view-display-id-block_1
     // Span 3 columns
@@ -42,12 +41,25 @@
     .views-row-3,
     .views-row-4
       width: $column_width * 2
-      
+  // Block 3
+  &.view-display-id-block_3
+    article
+      padding: 20px
+    h2.node-title
+      font-size: 1.5em
+      line-height: 1.25em
+      margin: 0 0 10px
+      a
+        color: $black
+    .field-type-image
+      margin-bottom: 10px
+
 // "Popular" view
 .view-popular
   // Block 1
   &.view-display-id-block_1
     .view-content
+      margin-top: 20px
       padding: 0 20px
     ul
       margin: 0
@@ -69,7 +81,7 @@
     .submitted
       margin: 5px 0 0
     .pagination 
-      margin: 10px 0
+      margin: 10px 0 18px
 
 // "Highlight" view
 .view-highlight

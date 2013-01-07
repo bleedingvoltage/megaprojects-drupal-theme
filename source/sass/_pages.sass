@@ -7,10 +7,10 @@
 // Body
 //
 
-#page 
-  margin-bottom: 10px
+#page
   border-left: 1px solid $gray-light
   border-right: 1px solid $gray-light
+  margin-bottom: 10px
 
 // The skip-link link will be completely hidden until a user tabs to the link.
 // See the element-focusable rule in system.base.css.
@@ -18,16 +18,16 @@
   margin: 0
   a,
   a:visited 
-    display: block
-    width: 100%
-    padding: 2px 0 3px 0
-    text-align: center
     background-color: $gray-dark
     color: $white
+    display: block
+    padding: 2px 0 3px 0
+    text-align: center
+    width: 100%
 
 // Wrapper for website name and slogan
 #name-and-slogan
-  display: none
+  +element-invisible
 
 .breadcrumb
   background: #f5f5f5
@@ -37,8 +37,17 @@
 // Content
 //
 
+#content
+  padding: 30px 50px
+
+.page-panels #content
+  padding: 0
+
 h1.title 
-  padding: 20px 50px
+  border-bottom: 1px dotted $gray-light
+  line-height: 1.2em
+  margin: 0
+  padding: 30px 50px
 
 //
 // Header
@@ -52,8 +61,8 @@ h1.title
   #block-search-form 
     +zen-grid-item(2, 6, left, $zen-column-count, 20px)
   .block 
-    margin-top: 10px
     margin-bottom: 10px
+    margin-top: 10px
 
 //
 // Footer
@@ -72,8 +81,8 @@ h1.title
   #block-menu-block-3 
     +zen-grid-item(1, 7, left, $zen-column-count, 20px)
   .block 
-    margin-top: 10px
     margin-bottom: 10px
+    margin-top: 10px
     .block-title 
       color: $white
       font-size: 1em
