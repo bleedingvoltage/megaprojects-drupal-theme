@@ -383,6 +383,7 @@ function megaprojectske_preprocess_button(&$variables, $hook) {
       t('Rebuild') => 'btn-primary',
       t('Search') => 'btn-primary',
       t('Vote') => 'btn-primary',
+      t('Send message') => 'btn-primary',
       t('Add') => 'btn-info',
       t('Update') => 'btn-info',
       t('Delete') => 'btn-danger',
