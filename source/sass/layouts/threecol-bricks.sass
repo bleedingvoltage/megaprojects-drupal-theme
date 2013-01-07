@@ -6,20 +6,27 @@
 @import "base"
 
 .panel-3col-bricks
-  .center-wrapper, 
-  .panel-col-top, 
-  .panel-col-middle, 
-  .panel-col-bottom
-    width: 100%
-    clear: both
-  .panel-col, 
-  .panel-col-first, 
-  .panel-col-last
-    float: left
-  .panel-col-first, 
-  .panel-col-last
-    width: $zen-grid-width / 4
+  .panel-row
+    +zen-clear
+    border-bottom: 2px solid $black
+    overflow: hidden
+  .columns-3
+    background: url('../../img/columns-3-bg.png') repeat-y transparent top 
+  .panel-col-0
+    +zen-grid-item(2, 1)
+  .panel-col-1
+    +zen-grid-item(1, 3)
+  .panel-col-2
+    +zen-grid-item(1, 4)
+  .panel-col-3
+    +zen-grid-item(1, 5)
+  .panel-col-4
+    +zen-grid-item(2, 6)
+  .panel-col-first
+    +zen-grid-item(2, 1)
   .panel-col
-    width: $zen-grid-width / 2
+    +zen-grid-item(3, 3)
+  .panel-col-last
+    +zen-grid-item(2, 6)
   .panel-separator
-    margin: 0 0 1em 0
+    border-bottom: 1px solid $gray-light

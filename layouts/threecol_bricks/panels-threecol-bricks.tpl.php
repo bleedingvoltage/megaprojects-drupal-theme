@@ -10,47 +10,69 @@
 ?>
 
 <div class="panel-display panel-3col-bricks clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <?php if ($content['top']): ?>
-    <div class="panel-panel panel-col-top">
-      <div class="inside"><?php print $content['top']; ?></div>
-    </div>
-  <?php endif ?>
 
-  <div class="center-wrapper">
+  <div class="panel-row columns-1">
+    <div class="panel-panel panel-col-top">
+      <div class="inside"><?php print $content['top_0']; ?></div>
+    </div>
+  </div>
+
+  <div class="panel-row columns-5">
+    <div class="panel-panel panel-col-0">
+      <div class="inside"><?php print $content['col_0']; ?></div>
+    </div>
+    <div class="panel-panel panel-col-1">
+      <div class="inside"><?php print $content['col_1']; ?></div>
+    </div>
+    <div class="panel-panel panel-col-2">
+      <div class="inside"><?php print $content['col_2']; ?></div>
+    </div>
+    <div class="panel-panel panel-col-3">
+      <div class="inside"><?php print $content['col_3']; ?></div>
+    </div>
+    <div class="panel-panel panel-col-4">
+      <div class="inside"><?php print $content['col_4']; ?></div>
+    </div>
+  </div>
+
+  <div class="panel-row columns-3">
     <div class="panel-panel panel-col-first">
-      <div class="inside"><?php print $content['left_above']; ?></div>
+      <div class="inside"><?php print $content['lef_0']; ?></div>
     </div>
 
     <div class="panel-panel panel-col">
-      <div class="inside"><?php print $content['middle_above']; ?></div>
+      <div class="inside"><?php print $content['mid_0']; ?></div>
     </div>
 
     <div class="panel-panel panel-col-last">
-      <div class="inside"><?php print $content['right_above']; ?></div>
+      <div class="inside"><?php print $content['rig_0']; ?></div>
     </div>  
   </div>
   
-  <div class="panel-panel panel-col-middle">
-    <div class="inside"><?php print $content['middle']; ?></div>
+  <div class="panel-row columns-1">
+    <div class="panel-panel panel-col-middle">
+      <div class="inside"><?php print $content['cen_0']; ?></div>
+    </div>
   </div>
 
-  <div class="center-wrapper">
+  <div class="panel-row columns-3">
     <div class="panel-panel panel-col-first">
-      <div class="inside"><?php print $content['left_below']; ?></div>
+      <div class="inside"><?php print $content['lef_1']; ?></div>
     </div>
 
     <div class="panel-panel panel-col">
-      <div class="inside"><?php print $content['middle_below']; ?></div>
+      <div class="inside"><?php print $content['mid_1']; ?></div>
     </div>
 
     <div class="panel-panel panel-col-last">
-      <div class="inside"><?php print $content['right_below']; ?></div>
+      <div class="inside"><?php print $content['rig_1']; ?></div>
     </div>
   </div>
 
-  <?php if ($content['bottom']): ?>
+  <div class="panel-row columns-1">
     <div class="panel-panel panel-col-bottom">
-      <div class="inside"><?php print $content['bottom']; ?></div>
+      <div class="inside"><?php print $content['bot_0']; ?></div>
     </div>
-  <?php endif ?>
+  </div>
+
 </div>
