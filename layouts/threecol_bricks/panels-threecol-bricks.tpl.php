@@ -4,18 +4,8 @@
  * Template for a 3 column panel layout.
  *
  * This template provides a three column panel display layout, with each column 
- * roughly equal in width. It is 5 rows high; the top middle and bottom rows 
- * contain 1 column, while the second and fourth rows contain 3 columns.
- *
- * TODO: Variables:
- * - $id: An optional CSS id to use for the layout.
- * - $content: An array of content, each item in the array is keyed to one
- *   panel of the layout. This layout supports the following sections:
- *   - $content['top']: Content in the top row.
- *   - $content['left']: Content in the left column.
- *   - $content['middle']: Content in the middle column.
- *   - $content['right']: Content in the right column.
- *   - $content['bottom']: Content in the bottom row.
+ * roughly equal in width. It is 7 rows high; the top middle and bottom rows 
+ * contain 1 column, while the third and fifth rows contain 3 columns.
  */
 ?>
 
