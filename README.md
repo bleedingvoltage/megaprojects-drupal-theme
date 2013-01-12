@@ -1,1 +1,1 @@
-# MegaProjects Kenya
+# MegaProjects Kenya Drupal Theme

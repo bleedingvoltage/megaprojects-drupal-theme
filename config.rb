@@ -4,11 +4,9 @@
 
 # Change this to :production when ready to deploy the CSS to the live server.
 environment = :development
-#environment = :production
 
 # In development, we can turn on the FireSass-compatible debug_info.
 firesass = false
-#firesass = true
 
 # Location of the theme's resources.
 sass_dir        = "source/sass"
@@ -17,7 +15,6 @@ images_dir      = "public/img"
 javascripts_dir = "public/js"
 
 # Require any additional compass plugins installed on your system.
-#require 'ninesixty'
 require 'zen-grids'
 
 # You can select your preferred output style here (can be overridden via the command line):
