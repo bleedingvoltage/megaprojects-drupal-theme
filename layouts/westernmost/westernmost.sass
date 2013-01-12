@@ -1,0 +1,20 @@
+//
+// @file
+// Westernmost panel layout.
+//
+
+@import "../../source/sass/base"
+
+.panel-westernmost
+  .panel-row
+    +zen-clear
+    border-bottom: 2px solid $black
+    overflow: hidden
+  .westernmost-columns-2
+    background: url('../../img/columns-2-bg.png') repeat-y transparent top 
+    .westernmost-column-1
+      +zen-grid-item(10, 1)
+    .westernmost-column-2
+      +zen-grid-item(2, 11)
+  .panel-separator
+    border-bottom: 1px solid $gray-light

@@ -1,0 +1,53 @@
+/* line 9, pandora.sass */
+.panel-pandora .panel-row {
+  clear: left;
+  border-bottom: 2px solid black;
+  overflow: hidden; }
+/* line 13, pandora.sass */
+.panel-pandora .pandora-columns-3 {
+  background: url("../../img/columns-3-bg.png") repeat-y transparent top; }
+  /* line 15, pandora.sass */
+  .panel-pandora .pandora-columns-3 .pandora-column-1 {
+    float: left;
+    width: 328px;
+    margin-left: 0px;
+    margin-right: -328px; }
+  /* line 17, pandora.sass */
+  .panel-pandora .pandora-columns-3 .pandora-column-2 {
+    float: left;
+    width: 328px;
+    margin-left: 328px;
+    margin-right: -656px; }
+  /* line 19, pandora.sass */
+  .panel-pandora .pandora-columns-3 .pandora-column-3 {
+    float: left;
+    width: 328px;
+    margin-left: 656px;
+    margin-right: -984px; }
+/* line 22, pandora.sass */
+.panel-pandora .pandora-columns-4 .pandora-column-1 {
+  float: left;
+  width: 246px;
+  margin-left: 0px;
+  margin-right: -246px; }
+/* line 24, pandora.sass */
+.panel-pandora .pandora-columns-4 .pandora-column-2 {
+  float: left;
+  width: 246px;
+  margin-left: 246px;
+  margin-right: -492px; }
+/* line 26, pandora.sass */
+.panel-pandora .pandora-columns-4 .pandora-column-3 {
+  float: left;
+  width: 246px;
+  margin-left: 492px;
+  margin-right: -738px; }
+/* line 28, pandora.sass */
+.panel-pandora .pandora-columns-4 .pandora-column-4 {
+  float: left;
+  width: 246px;
+  margin-left: 738px;
+  margin-right: -984px; }
+/* line 30, pandora.sass */
+.panel-pandora .panel-separator {
+  border-bottom: 1px solid #dfdfdf; }

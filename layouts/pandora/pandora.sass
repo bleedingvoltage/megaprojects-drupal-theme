@@ -1,0 +1,31 @@
+//
+// @file
+// Pandora panel layout.
+//
+
+@import "../../source/sass/base"
+
+.panel-pandora
+  .panel-row
+    +zen-clear
+    border-bottom: 2px solid $black
+    overflow: hidden
+  .pandora-columns-3
+    background: url('../../img/columns-3-bg.png') repeat-y transparent top 
+    .pandora-column-1
+      +zen-grid-item(4, 1)
+    .pandora-column-2
+      +zen-grid-item(4, 5)
+    .pandora-column-3
+      +zen-grid-item(4, 9)
+  .pandora-columns-4
+    .pandora-column-1
+      +zen-grid-item(3, 1)
+    .pandora-column-2
+      +zen-grid-item(3, 4)
+    .pandora-column-3
+      +zen-grid-item(3, 7)
+    .pandora-column-4
+      +zen-grid-item(3, 10)
+  .panel-separator
+    border-bottom: 1px solid $gray-light

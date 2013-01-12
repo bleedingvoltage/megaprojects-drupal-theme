@@ -1,0 +1,23 @@
+/* line 9, westernmost.sass */
+.panel-westernmost .panel-row {
+  clear: left;
+  border-bottom: 2px solid black;
+  overflow: hidden; }
+/* line 13, westernmost.sass */
+.panel-westernmost .westernmost-columns-2 {
+  background: url("../../img/columns-2-bg.png") repeat-y transparent top; }
+  /* line 15, westernmost.sass */
+  .panel-westernmost .westernmost-columns-2 .westernmost-column-1 {
+    float: left;
+    width: 820px;
+    margin-left: 0px;
+    margin-right: -820px; }
+  /* line 17, westernmost.sass */
+  .panel-westernmost .westernmost-columns-2 .westernmost-column-2 {
+    float: left;
+    width: 164px;
+    margin-left: 820px;
+    margin-right: -984px; }
+/* line 19, westernmost.sass */
+.panel-westernmost .panel-separator {
+  border-bottom: 1px solid #dfdfdf; }
