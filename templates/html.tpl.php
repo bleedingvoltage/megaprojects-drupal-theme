@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Theme's implementation to display the basic html structure of a single
+ * Theme's implementation to display the basic HTML structure of a single
  * Drupal page.
  *
  * Variables:
@@ -90,27 +90,28 @@
     <meta http-equiv="cleartype" content="on">
 
     <?php print $styles; ?>
+
     <?php print $scripts; ?>
     <?php if ($add_respond_js): ?>
-      <!--[if lt IE 9]>
-      <script src="<?php print $base_path . $path_to_theme; ?>/js/html5-respond.js"></script>
-      <![endif]-->
+      <!--[if lt IE 9]><script src="<?php print $base_path . $path_to_theme; ?>/public/js/html5-respond.js"></script><![endif]-->
     <?php elseif ($add_html5_shim): ?>
-      <!--[if lt IE 9]>
-      <script src="<?php print $base_path . $path_to_theme; ?>/js/html5.js"></script>
-      <![endif]-->
+      <!--[if lt IE 9]><script src="<?php print $base_path . $path_to_theme; ?>/public/js/html5.js"></script><![endif]-->
     <?php endif; ?>
+
   </head>
 
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+
     <?php if ($skip_link_text && $skip_link_anchor): ?>
       <p id="skip-link">
         <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
       </p>
     <?php endif; ?>
+    
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+
   </body>
 
 </html>

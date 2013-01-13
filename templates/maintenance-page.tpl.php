@@ -19,6 +19,7 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html <?php print $html_attributes; ?>><!--<![endif]-->
 
   <head>
+
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
 
@@ -30,16 +31,14 @@
     <meta http-equiv="cleartype" content="on">
 
     <?php print $styles; ?>
+
     <?php print $scripts; ?>
     <?php if ($add_respond_js): ?>
-      <!--[if lt IE 9]>
-      <script src="<?php print $base_path . $path_to_zen; ?>/js/html5-respond.js"></script>
-      <![endif]-->
+      <!--[if lt IE 9]><script src="<?php print $base_path . $path_to_zen; ?>/js/html5-respond.js"></script><![endif]-->
     <?php elseif ($add_html5_shim): ?>
-      <!--[if lt IE 9]>
-      <script src="<?php print $base_path . $path_to_zen; ?>/js/html5.js"></script>
-      <![endif]-->
+      <!--[if lt IE 9]><script src="<?php print $base_path . $path_to_zen; ?>/js/html5.js"></script><![endif]-->
     <?php endif; ?>
+
   </head>
   
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
@@ -64,11 +63,12 @@
 
         <?php print $header; ?>
 
-      </header>
+      </header><!-- /#header -->
 
       <div id="main">
 
         <div id="content" class="column" role="main">
+
           <?php print $highlighted; ?>
           <a id="main-content"></a>
           <?php if ($title): ?>
@@ -76,15 +76,22 @@
           <?php endif; ?>
           <?php print $messages; ?>
           <?php print $content; ?>
+
         </div><!-- /#content -->
 
         <div id="navigation">
+
           <?php print $navigation; ?>
+
         </div><!-- /#navigation -->
 
       </div><!-- /#main -->
 
-      <?php print $footer; ?>
+      <footer id="footer">
+        
+        <?php print $footer; ?>
+
+      </footer><!-- /#footer -->
 
     </div><!-- /#page -->
 
