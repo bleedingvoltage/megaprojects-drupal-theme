@@ -23,7 +23,9 @@
   +zen-grid-item-base(20px)
 
 #navigation,
-#content
+#content,
+.region-sidebar-first,
+.region-sidebar-second
   +zen-grid-item-base
 
 //
@@ -50,3 +52,15 @@
   top: 0
   height: 3em
   width: $zen-grid-width - $zen-gutter-width
+
+.sidebar-first
+  #content
+    +zen-grid-item(9, 4)
+  .region-sidebar-first
+    +zen-grid-item(3, 1)
+
+.sidebar-second
+  #content
+    +zen-grid-item(9, 1)
+  .region-sidebar-second
+    +zen-grid-item(3, 10)
