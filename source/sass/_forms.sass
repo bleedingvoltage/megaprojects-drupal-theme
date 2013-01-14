@@ -3,10 +3,10 @@
 // Form styling.
 //
 
-#block-search-form
+// Search block form
+#search-block-form 
+  margin: 0
   text-align: right
-  form 
-    margin: 0
   input.form-text
     background: #fcfcfc
     border: 1px solid $gray-light
@@ -23,3 +23,25 @@
     // Hide "Search" text
     text-indent: -9999px
     width: 30px
+
+// Recent poll block form
+#block-poll-recent
+  .poll
+    padding: 0 20px
+    .title
+      margin-bottom: 10px
+    button.form-submit
+      width: 100%
+
+// Search form
+#search-form
+  margin: 0
+  .control-group
+    display: inline-block
+    margin: 0
+    vertical-align: middle
+  label.control-label
+    margin: 0 10px 0 0
+    vertical-align: middle
+  input.form-text
+    margin: 0 5px 0 0

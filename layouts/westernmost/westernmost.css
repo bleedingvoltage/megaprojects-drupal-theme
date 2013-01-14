@@ -9,14 +9,14 @@
   /* line 15, westernmost.sass */
   .panel-westernmost .westernmost-columns-2 .westernmost-column-1 {
     float: left;
-    width: 820px;
+    width: 738px;
     margin-left: 0px;
-    margin-right: -820px; }
+    margin-right: -738px; }
   /* line 17, westernmost.sass */
   .panel-westernmost .westernmost-columns-2 .westernmost-column-2 {
     float: left;
-    width: 164px;
-    margin-left: 820px;
+    width: 246px;
+    margin-left: 738px;
     margin-right: -984px; }
 /* line 19, westernmost.sass */
 .panel-westernmost .panel-separator {

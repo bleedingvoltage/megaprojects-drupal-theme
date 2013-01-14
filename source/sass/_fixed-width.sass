@@ -9,7 +9,7 @@
 
 .region-top,
 #page,
-.region-bottom 
+.region-bottom
   margin-left: auto
   margin-right: auto
   width: $zen-grid-width
@@ -19,7 +19,7 @@
 //
 
 #header,
-#footer 
+#footer
   +zen-grid-item-base(20px)
 
 #navigation,
@@ -34,24 +34,28 @@
 
 #header,
 #main,
-#footer 
+#footer
   +zen-grid-container
 
 //
 // Navigation bar
 //
 
-#main 
+#main
   // Move all the children of #main down to make room.
   padding-top: 4.8em // 3 + 2
   position: relative
 
-#navigation 
+#navigation
   position: absolute
   // Move the navbar up inside #main's padding.
   top: 0
   height: 3em
   width: $zen-grid-width - $zen-gutter-width
+
+//
+// The layout when there is one sidebar
+//
 
 .sidebar-first
   #content

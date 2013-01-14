@@ -12,19 +12,14 @@
     border-top: 1px solid $gray-light
   .block
     margin-bottom: 0
-  // OM Maximenu block links
   .block-om-maximenu
     .block-title
       +element-invisible
     .om-maximenu
       overflow: hidden
-    .om-maximenu-edit
+    .om-maximenu-edit,
+    .edit-block
       +element-invisible
-      // a
-      //   font-size: 0.8em
-      //   padding: 0 10px
-      //   text-decoration: none
-      //   text-transform: uppercase
     ul.om-menu
       float: left
       margin: 0
@@ -60,11 +55,10 @@
         margin: 0
         padding: 8px 0
         width: 250px
-      li.leaf, 
-      li.active-trail
-        a
-          color: #555
-          padding: 10px 30px
+        li
+          a
+            color: #555
+            padding: 10px 30px
   .block-menu-block
     +zen-clear
     background: $black
@@ -82,21 +76,25 @@
       font-size: 0.9em
       margin: 0
       overflow: hidden
-    li.leaf,
-    li.active-trail
-      float: left      
-      a
-        color: $gray-lighter
-        line-height: 2em
-        padding: 0 10px
-        &:hover
-          background: none
-          color: $gray
+      li
+        float: left      
+        a
+          color: $gray-lighter
+          line-height: 2em
+          padding: 0 10px
+          &:hover,
+          &:visited
+            background: none
+            color: $gray
 
-.not-front #navigation
+.not-front 
+  #navigation
+    .block-om-maximenu
+      .om-link
+        padding: 0 18px
   // Navigation logo block
   #block-block-3
-    +zen-grid-item(2, 1)
+    +zen-grid-item(3, 1)
     background: $gray-lighter
     border-bottom: 1px solid $gray-lighter
     .logo
@@ -105,11 +103,9 @@
       padding: 0 10px
       img
         vertical-align: middle
-  .block-om-maximenu
-    .om-link
-      padding: 0 18px
+  // OM Maximenu 1 block
   #block-om-maximenu-om-maximenu-1
-    +zen-grid-item(5, 3)
+    +zen-grid-item(9, 4)
     ul.om-menu
       border-left: 1px solid $gray-light
 
@@ -122,17 +118,16 @@
     ul.menu 
       font-size: .9em
       margin: 0
-    li.leaf, 
-    li.active-trail
-      list-style: none
-      border-bottom: 1px dotted #666
-      a 
-        color: #c3c3c3
-        display: block
-        padding: 5px 0
-        text-decoration: none
-        &:hover 
-          background: none
-          color: $white
-    li.last
-      border-bottom: none
+      li
+        list-style: none
+        border-bottom: 1px dotted #666
+        a 
+          color: #c3c3c3
+          display: block
+          padding: 5px 0
+          text-decoration: none
+          &:hover
+            background: none
+            color: $white
+      li.last
+        border-bottom: none

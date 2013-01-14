@@ -3,46 +3,60 @@
 // Block styling
 //
 
-#block-block-4,
-#block-block-5,
-#block-block-6,
-#block-block-7,
-#block-block-8
-  padding: 50px 20px
+// Header logo block
+#block-block-1 
+  +zen-grid-item(6, 1, left, $zen-column-count, 20px)
 
-// "1"
-#block-block-4
-  background: $green
+// Search form block
+#block-search-form 
+  +zen-grid-item(3, 10, left, $zen-column-count, 20px)
 
-// "2"
-#block-block-5
-  background: $red
+// Footer logo block
+#block-block-2 
+  +zen-grid-item(6, 1, left, $zen-column-count, 20px)
 
-// "3"
-#block-block-6
-  background: $purple
+// Pages menu block
+#block-menu-block-2 
+  +zen-grid-item(2, 9, left, $zen-column-count, 20px)
 
-// "4"
-#block-block-7
-  background: $orange
+// Section menu block
+#block-menu-block-3 
+  +zen-grid-item(2, 11, left, $zen-column-count, 20px)
 
-// "Total"
-#block-block-8
-  background: $blue
-
-// 'Poll Recent' block
+// Recent poll block
 #block-poll-recent
   #poll-view-voting
     margin: 20px 0
   h2.block-title
     @extend h2.pane-title
-  .poll
-    padding: 0 20px
-    .title
-      margin-bottom: 10px
-    button.form-submit
-      width: 100%
   ul.links
     background: $gray-lighter
     margin: 0 20px 20px
     padding: 10px 30px
+
+// #block-block-4,
+// #block-block-5,
+// #block-block-6,
+// #block-block-7,
+// #block-block-8
+//   padding: 50px 20px
+
+// // "1"
+// #block-block-4
+//   background: $green
+
+// // "2"
+// #block-block-5
+//   background: $red
+
+// // "3"
+// #block-block-6
+//   background: $purple
+
+// // "4"
+// #block-block-7
+//   background: $orange
+
+// // "Total"
+// #block-block-8
+//   background: $blue
