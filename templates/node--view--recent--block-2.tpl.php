@@ -84,7 +84,7 @@
  */
 
 $style_name = 'recent';
-$image_path = image_style_url($style_name, $field_image[0]['uri']);      
+$image_path = image_style_url($style_name, $field_image[0]['uri']);
 ?>
 
 <article style="background-image: url('<?php print $image_path; ?>')" class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -109,5 +109,5 @@ $image_path = image_style_url($style_name, $field_image[0]['uri']);
       <?php endif; ?>
     </header>
   <?php endif; ?>
-  
+
 </article><!-- /.node -->

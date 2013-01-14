@@ -29,7 +29,7 @@ function megaprojectske_form_element(&$variables) {
   // Add bootstrap class
   if ($element['#type'] == "radio" || $element['#type'] == "checkbox") {
     $exclude_control = true;
-  } 
+  }
   else {
     $attributes['class'] = array('control-group');
   }
@@ -73,13 +73,13 @@ function megaprojectske_form_element(&$variables) {
         $exclude_control = TRUE;
       }
       else {
-        $output = $exclude_control ? $output : $output.$control_wrapper;
+        $output = $exclude_control ? $output : $output . $control_wrapper;
         $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
       }
       break;
 
     case 'after':
-      $output = $exclude_control ? $output : $output.$control_wrapper;
+      $output = $exclude_control ? $output : $output . $control_wrapper;
       $variables['#children'] = ' ' . $prefix . $element['#children'] . $suffix;
       $output .= ' ' . theme('form_element_label', $variables) . "\n";
       break;
@@ -87,19 +87,19 @@ function megaprojectske_form_element(&$variables) {
     case 'none':
     case 'attribute':
       // Output no label and no required marker, only the children.
-      $output = $exclude_control ? $output : $output.$control_wrapper;
+      $output = $exclude_control ? $output : $output . $control_wrapper;
       $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
       break;
   }
 
-  if ( !empty($element['#description']) ) {
+  if (!empty($element['#description'])) {
     $output .= '<p class="help-block">' . $element['#description'] . "</p>\n";
   }
 
   // Check if control wrapper was added to ensure we close div correctly
   if ($exclude_control) {
     $output .= "</div>\n";
-  } 
+  }
   else {
     $output .= "</div></div>\n";
   }
@@ -130,7 +130,7 @@ function megaprojectske_form_element_label(&$variables) {
   if ($element['#title_display'] == 'after') {
     $attributes['class'][] = 'option';
     $attributes['class'][] = $element['#type'];
-  } 
+  }
   elseif ($element['#title_display'] == 'invisible') {
     // Show label only to screen readers to avoid disruption in visual flows.
     $attributes['class'][] = 'element-invisible';
@@ -146,7 +146,7 @@ function megaprojectske_form_element_label(&$variables) {
   }
   // @Bootstrap: Insert radio and checkboxes inside label elements.
   $output = '';
-  if ( isset($variables['#children']) ) {
+  if (isset($variables['#children'])) {
     $output .= $variables['#children'];
   }
 
@@ -175,19 +175,19 @@ function megaprojectske_button($variables) {
 
   if (in_array($element['#id'], $whitelist)) {
     return '<input' . drupal_attributes($element['#attributes']) . ">\n"; // This line break adds inherent margin between multiple buttons
-  } 
+  }
   else {
-    return '<button' . drupal_attributes($element['#attributes']) . '>'. $label ."</button>\n"; // This line break adds inherent margin between multiple buttons
+    return '<button' . drupal_attributes($element['#attributes']) . '>' . $label . "</button>\n"; // This line break adds inherent margin between multiple buttons
   }
 }
 
 /**
  * Returns an array containing ids of any whitelisted drupal elements.
- * 
+ *
  * Why whitelist an element?
  *
- * The reason is to provide a list of elements we wish to exclude from certain 
- * modifications made by the bootstrap theme which break core functionality 
+ * The reason is to provide a list of elements we wish to exclude from certain
+ * modifications made by the bootstrap theme which break core functionality
  * - e.g. ajax.
  */
 function _megaprojectske_element_whitelist() {

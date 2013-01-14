@@ -3,7 +3,7 @@
  * @file
  * The theme system, which overrides the default output of Drupal.
  */
- 
+
 /**
  * Returns HTML for a list or nested list of items.
  */
@@ -33,15 +33,15 @@ function megaprojectske_item_list($variables) {
         foreach ($item as $key => $value) {
           if ($key == 'data') {
             $data = $value;
-          } 
+          }
           elseif ($key == 'children') {
             $children = $value;
-          } 
+          }
           else {
             $attributes[$key] = $value;
           }
         }
-      } 
+      }
       else {
         $data = $item;
       }
@@ -78,11 +78,11 @@ function megaprojectske_links($variables) {
   if (count($links) > 0) {
     $output .= '<ul' . drupal_attributes($attributes) . '>';
 
-    // Treat the heading first if it is present to prepend it to the list of 
+    // Treat the heading first if it is present to prepend it to the list of
     // links.
     if (!empty($heading)) {
       if (is_string($heading)) {
-        // Prepare the array that will be used when the passed heading is a 
+        // Prepare the array that will be used when the passed heading is a
         // string.
         $heading = array(
           'text' => $heading,
@@ -102,14 +102,14 @@ function megaprojectske_links($variables) {
 
     foreach ($links as $key => $link) {
       $children = array();
-      
+
       if (isset($link['below'])) {
         $children = $link['below'];
       }
 
       $attributes = array('class' => array($key));
 
-      // Add first, last and active classes to the list of links to help out 
+      // Add first, last and active classes to the list of links to help out
       // themers.
       if ($i == 1) {
         $attributes['class'][] = 'first';
@@ -118,7 +118,7 @@ function megaprojectske_links($variables) {
         $attributes['class'][] = 'last';
       }
       if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page()))
-           && (empty($link['language']) || $link['language']->language == $language_url->language)) {
+          && (empty($link['language']) || $link['language']->language == $language_url->language)) {
         $attributes['class'][] = 'active';
       }
       if (count($children) > 0) {
@@ -142,13 +142,13 @@ function megaprojectske_links($variables) {
         if (count($children) > 0) {
           $link['html'] = TRUE;
           $link['title'] .= '<span class="caret"></span>';
-          $output .=  '<a' . drupal_attributes($link['attributes']) . ' href="#">'. $link['title'] .'</a>';
-        } 
+          $output .= '<a' . drupal_attributes($link['attributes']) . ' href="#">' . $link['title'] . '</a>';
+        }
         else {
           // Pass in $link as $options, they share the same keys.
           $output .= l($link['title'], $link['href'], $link);
         }
-      } 
+      }
       elseif (!empty($link['title'])) {
         // Some links are actually not links, but we wrap these in <span> for adding title and class attributes.
         if (empty($link['html'])) {
@@ -163,7 +163,7 @@ function megaprojectske_links($variables) {
 
       $i++;
 
-      if(count($children) > 0) {
+      if (count($children) > 0) {
         $attributes = array();
         $attributes['class'] = array('dropdown-menu');
         $output .= theme('bootstrap_links', array('links' => $children, 'attributes' => $attributes));
@@ -214,7 +214,7 @@ function megaprojectske_status_messages($variables) {
         $output .= '  <li>' . $message . "</li>\n";
       }
       $output .= " </ul>\n";
-    } 
+    }
     else {
       $output .= $messages[0];
     }

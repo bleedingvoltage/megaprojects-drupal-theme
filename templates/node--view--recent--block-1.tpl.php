@@ -83,7 +83,7 @@
  * @see template_process()
  */
 
-$style_name = ($view->result[0]->nid == $node->nid ? 'recent-large' : ($view->result[1]->nid == $node->nid ? 'recent' : 'recent-medium')); 
+$style_name = ($view->result[0]->nid == $node->nid ? 'recent-large' : ($view->result[1]->nid == $node->nid ? 'recent' : 'recent-medium'));
 $image_path = image_style_url($style_name, $field_image[0]['uri']);
 ?>
 

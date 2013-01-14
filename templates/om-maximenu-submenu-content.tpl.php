@@ -18,11 +18,11 @@
  * @see template_preprocess_om_maximenu_submenu_links()
  * @see template_preprocess_om_maximenu_submenu_content()
  */
-?>  
+?>
 
 <?php if (!empty($content)): ?>
   <div class="om-maximenu-content om-maximenu-content-nofade closed">
     <?php print om_maximenu_content_render($content); ?>
   </div>
-<?php endif; ?> 
+<?php endif; ?>
 

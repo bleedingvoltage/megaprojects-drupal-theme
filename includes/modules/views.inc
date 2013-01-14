@@ -5,9 +5,9 @@
  */
 
 function megaprojectske_preprocess_views_view_table(&$variables) {
-  $vars['classes_array'][] = 'table';
+  $variables['classes_array'][] = 'table';
 }
 
 function megaprojectske_preprocess_views_view_grid(&$variables) {
-  $vars['class'] .= ' table';
+  $variables['class'] .= ' table';
 }

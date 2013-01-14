@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains functions to alter Drupal's markup for the MegaProjects Kenya 
+ * Contains functions to alter Drupal's markup for the MegaProjects Kenya
  * theme.
  */
 
@@ -17,7 +17,7 @@ $includes = file_scan_directory($theme_path . '/includes/modules', '/\.inc$/');
 foreach ($includes as $include) {
   if (module_exists($include->name)) {
     require_once $include->uri;
-  }    
+  }
 }
 
 /**
@@ -27,8 +27,8 @@ foreach ($includes as $include) {
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered. This is usually "html", but can
- *   also be "maintenance_page" since 
- *   megaprojectske_preprocess_maintenance_page() calls this function to have 
+ *   also be "maintenance_page" since
+ *   megaprojectske_preprocess_maintenance_page() calls this function to have
  *   consistent variables.
  */
 function megaprojectske_preprocess_html(&$variables, $hook) {
@@ -36,10 +36,10 @@ function megaprojectske_preprocess_html(&$variables, $hook) {
 
   // Add variables and paths needed for HTML5 and responsive support.
   $variables['base_path'] = base_path();
-  $variables['add_respond_js']          = in_array('respond', $html5_respond_meta);
-  $variables['add_html5_shim']          = in_array('html5', $html5_respond_meta);
+  $variables['add_respond_js'] = in_array('respond', $html5_respond_meta);
+  $variables['add_html5_shim'] = in_array('html5', $html5_respond_meta);
   $variables['default_mobile_metatags'] = in_array('meta', $html5_respond_meta);
-  $variables['path_to_theme']           = drupal_get_path('theme', 'megaprojectske');
+  $variables['path_to_theme'] = drupal_get_path('theme', 'megaprojectske');
   // Attributes for html element.
   $variables['html_attributes_array'] = array(
     'lang' => $variables['language']->language,
@@ -138,7 +138,6 @@ function megaprojectske_html_head_alter(&$head) {
   }
 }
 
-
 /**
  * Override or insert variables into the maintenance page template.
  *
@@ -189,7 +188,8 @@ function megaprojectske_preprocess_node(&$variables, $hook) {
   if ($variables['display_submitted']) {
     if ($variables['teaser']) {
       $variables['submitted'] = t('!datetime', array('!datetime' => $variables['pubdate']));
-    } else {
+    }
+    else {
       // $variables['submitted'] = t('Submitted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['pubdate']));
       $variables['submitted'] = t('By !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['pubdate']));
     }
@@ -221,13 +221,13 @@ function megaprojectske_preprocess_region(&$variables, $hook) {
   if (strpos($variables['region'], 'sidebar_') === 0) {
     $variables['classes_array'][] = 'column';
     $variables['classes_array'][] = 'sidebar';
-    // Allow a region-specific template to override MegaProject Kenya's 
+    // Allow a region-specific template to override MegaProject Kenya's
     // region--sidebar.
     array_unshift($variables['theme_hook_suggestions'], 'region__sidebar');
   }
   // Use a template with no wrapper for the content region.
   elseif ($variables['region'] == 'content') {
-    // Allow a region-specific template to override MegaProject Kenya's 
+    // Allow a region-specific template to override MegaProject Kenya's
     // region--no-wrapper.
     array_unshift($variables['theme_hook_suggestions'], 'region__no_wrapper');
   }
@@ -347,7 +347,7 @@ function megaprojectske_preprocess_table(&$variables, $hook) {
     $variables['attributes']['class'] = explode(' ', $variables['attributes']['class']);
   }
   $variables['attributes']['class'][] = 'table';
-  $variables['attributes']['class'][] = 'table-striped'; 
+  $variables['attributes']['class'][] = 'table-striped';
 }
 
 /**
@@ -391,7 +391,7 @@ function megaprojectske_preprocess_button(&$variables, $hook) {
       t('Delete') => 'btn-danger',
       t('Remove') => 'btn-danger',
     );
-    
+
     foreach ($classes as $search => $class) {
       if (strpos($variables['element']['#value'], $search) !== false) {
         $variables['element']['#attributes']['class'][] = $class;
@@ -467,7 +467,7 @@ function megaprojectske_form_alter(&$form, &$form_state, $form_id) {
     'system_site_information_settings',
     'user_profile_form',
   );
-  
+
   // Only wrap in container for certain form
   if (isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form'])) {
     $form['actions']['#theme_wrappers'] = array();
@@ -486,9 +486,10 @@ function megaprojectske_breadcrumb($variables) {
     $breadcrumb = $variables['breadcrumb'];
 
     if (!empty($breadcrumb)) {
-      $breadcrumbs = '<ul class="breadcrumb" role="navigation">';
-      
+      $breadcrumb[] = drupal_get_title();
       $count = count($breadcrumb) - 1;
+
+      $breadcrumbs = '<ul class="breadcrumb" role="navigation">';
       foreach ($breadcrumb as $key => $value) {
         if ($count != $key) {
           $breadcrumbs .= '<li>' . $value . '<span class="divider">/</span></li>';
@@ -498,7 +499,7 @@ function megaprojectske_breadcrumb($variables) {
         }
       }
       $breadcrumbs .= '</ul>';
-      
+
       return $breadcrumbs;
     }
   }

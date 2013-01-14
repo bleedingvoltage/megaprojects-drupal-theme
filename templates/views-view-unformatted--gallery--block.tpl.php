@@ -17,12 +17,20 @@ $counter = 0;
 <?php for ($i = 0; $i < $slides_max; $i++) : ?>
   <div class="item<?php print ($i == 0) ? ' active' : ''; ?>">
     <?php foreach ($rows as $id => $row): ?>
-      <?php if ($id < 5 * $counter || $id >= 5 * ($counter + 1)) { continue; } ?>
+      <?php
+      if ($id < 5 * $counter || $id >= 5 * ($counter + 1)) {
+        continue;
+      }
+      ?>
 
-      <div <?php if ($classes_array[$id]) { print 'class="' . $classes_array[$id] .'"';  } ?>>
-        <?php print $row; ?>
+      <div <?php
+      if ($classes_array[$id]) {
+        print 'class="' . $classes_array[$id] . '"';
+      }
+      ?>>
+    <?php print $row; ?>
       </div>
-    <?php endforeach; ?>
+  <?php endforeach; ?>
   </div>
   <?php $counter++; ?>
 <?php endfor; ?>

@@ -22,13 +22,13 @@
  * @see template_preprocess_om_maximenu_submenu_links()
  * @see template_preprocess_om_maximenu_submenu_content()
  */
-?>  
+?>
 
 <div id="om-menu-<?php print $maximenu_name; ?>-ul-wrapper" class="om-menu-ul-wrapper">
   <ul id="om-menu-<?php print $maximenu_name; ?>" class="om-menu nav">
     <?php foreach ($links['links'] as $key => $content): ?>
       <?php $count++; ?>
-      <?php print theme('om_maximenu_submenu_links', array('content' => $content, 'maximenu_name' => $maximenu_name, 'skin' => $skin, 'disabled' => $disabled, 'key' => $key, 'code' => $code, 'count' => $count, 'total' => $total)); ?>          
+      <?php print theme('om_maximenu_submenu_links', array('content' => $content, 'maximenu_name' => $maximenu_name, 'skin' => $skin, 'disabled' => $disabled, 'key' => $key, 'code' => $code, 'count' => $count, 'total' => $total)); ?>
     <?php endforeach; ?>
   </ul>
 </div>

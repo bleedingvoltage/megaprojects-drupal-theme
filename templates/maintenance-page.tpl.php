@@ -19,7 +19,6 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html <?php print $html_attributes; ?>><!--<![endif]-->
 
   <head>
-
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
 
@@ -34,69 +33,33 @@
 
     <?php print $scripts; ?>
     <?php if ($add_respond_js): ?>
-      <!--[if lt IE 9]><script src="<?php print $base_path . $path_to_zen; ?>/js/html5-respond.js"></script><![endif]-->
+      <!--[if lt IE 9]>
+        <script src="<?php print $base_path . $path_to_theme; ?>/public/js/html5-respond.js"></script>
+      <![endif]-->
     <?php elseif ($add_html5_shim): ?>
-      <!--[if lt IE 9]><script src="<?php print $base_path . $path_to_zen; ?>/js/html5.js"></script><![endif]-->
+      <!--[if lt IE 9]>
+        <script src="<?php print $base_path . $path_to_theme; ?>/public/js/html5.js"></script>
+      <![endif]-->
     <?php endif; ?>
-
   </head>
-  
-  <body class="<?php print $classes; ?>" <?php print $attributes;?>>
 
+  <body class="<?php print $classes; ?>" <?php print $attributes; ?>>
     <div id="page">
-
-      <header id="header" role="banner">
-
-        <?php if ($site_name || $site_slogan): ?>
-          <hgroup id="name-and-slogan">
-            <?php if ($site_name): ?>
-              <h1 id="site-name">
-                <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
-            <?php endif; ?>
-
-            <?php if ($site_slogan): ?>
-              <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
-            <?php endif; ?>
-          </hgroup><!-- /#name-and-slogan -->
-        <?php endif; ?>
-
-        <?php print $header; ?>
-
-      </header><!-- /#header -->
-
       <div id="main">
 
-        <div id="content" class="column" role="main">
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
 
+        <div id="content" class="column" role="main">
           <?php print $highlighted; ?>
           <a id="main-content"></a>
-          <?php if ($title): ?>
-            <h1 class="title" id="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
           <?php print $messages; ?>
           <?php print $content; ?>
-
         </div><!-- /#content -->
 
-        <div id="navigation">
-
-          <?php print $navigation; ?>
-
-        </div><!-- /#navigation -->
-
       </div><!-- /#main -->
-
-      <footer id="footer">
-        
-        <?php print $footer; ?>
-
-      </footer><!-- /#footer -->
-
     </div><!-- /#page -->
-
-  <?php print $bottom; ?>
-
   </body>
 
 </html>

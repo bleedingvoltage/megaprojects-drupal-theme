@@ -2,7 +2,7 @@
 ; Appearance page at admin/appearance.
 
 name        = MegaProjects Kenya
-description = A fixed width custom theme for <a href="http://www.megaprojects.co.ke">MegaProjects Kenya</a> built using Compass & (Twitter) Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development. Influenced by <a href="http://www.drupal.org/project/zen">Zen</a> and <a href="http://www.drupal.org/project/bootstrap">Bootstrap</a>.
+description = A fixed width theme for <a href="http://www.megaprojects.co.ke">MegaProjects Kenya</a> built using Compass & (Twitter) Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development. Influenced by <a href="http://www.drupal.org/project/zen">Zen</a> and <a href="http://www.drupal.org/project/bootstrap">Bootstrap</a>.
 version     = 7.x-0.2-alpha1
 core        = 7.x
 engine      = phptemplate

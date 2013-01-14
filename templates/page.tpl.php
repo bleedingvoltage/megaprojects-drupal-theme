@@ -65,15 +65,11 @@
 <div id="page">
 
   <header id="header" role="banner">
-
     <?php print render($page['header']); ?>
-
   </header><!-- /#header -->
 
   <div id="main">
-
     <?php print $breadcrumb; ?>
-
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
       <h1 class="title" id="page-title"><?php print $title; ?></h1>
@@ -81,32 +77,28 @@
     <?php print render($title_suffix); ?>
 
     <div id="content" class="column" role="main">
-
-      <?php print render($page['highlighted']); ?>
-      <a id="main-content"></a>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-
+      <div class="content-inner">
+        <?php print render($page['highlighted']); ?>
+        <a id="main-content"></a>
+        <?php print $messages; ?>
+        <?php print render($tabs); ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php print render($page['content']); ?>
+        <?php print $feed_icons; ?>
+      </div>
     </div><!-- /#content -->
 
     <div id="navigation">
-
       <?php print render($page['navigation']); ?>
-
     </div><!-- /#navigation -->
 
   </div><!-- /#main -->
 
   <footer id="footer">
-
     <?php print render($page['footer']); ?>
-
   </footer><!-- /#footer -->
 
 </div><!-- /#page -->

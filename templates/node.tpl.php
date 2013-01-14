@@ -108,9 +108,9 @@
   <?php endif; ?>
 
   <?php
-    // We hide the links now so that we can render them later.
-    hide($content['links']);
-    print render($content);
+  // We hide the links now so that we can render them later.
+  hide($content['links']);
+  print render($content);
   ?>
 
   <?php print render($content['links']); ?>

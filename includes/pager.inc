@@ -14,7 +14,7 @@ function megaprojectske_pager($variables) {
   $element = $variables['element'];
   $parameters = $variables['parameters'];
   $quantity = $variables['quantity'];
-  
+
   // Calculate various markers within this pager piece:
   // Middle is used to "center" pages around the current page.
   $pager_middle = ceil($quantity / 2);
@@ -50,13 +50,13 @@ function megaprojectske_pager($variables) {
   if ($pager_total[$element] > 1) {
     // if ($li_first) {
     //   $items[] = array(
-    //     'class' => array('pager-first'), 
+    //     'class' => array('pager-first'),
     //     'data' => $li_first,
     //   );
     // }
     if ($li_previous) {
       $items[] = array(
-        'class' => array('prev'), 
+        'class' => array('prev'),
         'data' => $li_previous,
       );
     }
@@ -73,19 +73,19 @@ function megaprojectske_pager($variables) {
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
           $items[] = array(
-            'class' => array('pager-item'), 
+            'class' => array('pager-item'),
             'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
           );
         }
         if ($i == $pager_current) {
           $items[] = array(
-            'class' => array('active'), // Add the active class 
-            'data' => l($i, '#', array('fragment' => '','external' => TRUE)),
+            'class' => array('active'), // Add the active class
+            'data' => l($i, '#', array('fragment' => '', 'external' => TRUE)),
           );
         }
         if ($i > $pager_current) {
           $items[] = array(
-            'class' => array('pager-item'), 
+            'class' => array('pager-item'),
             'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
           );
         }
@@ -100,13 +100,13 @@ function megaprojectske_pager($variables) {
     // End generation.
     if ($li_next) {
       $items[] = array(
-        'class' => array('next'), 
+        'class' => array('next'),
         'data' => $li_next,
       );
     }
     // if ($li_last) {
     //   $items[] = array(
-    //     'class' => array('pager-last'), 
+    //     'class' => array('pager-last'),
     //     'data' => $li_last,
     //   );
     // }
@@ -114,8 +114,8 @@ function megaprojectske_pager($variables) {
     $title = '<h2 class="element-invisible">' . t('Pages') . '</h2>';
 
     return '<div class="pagination pagination-centered">' . $title . theme('item_list', array(
-      'items' => $items, 
-      'attributes' => array('class' => array('pager')),
-    )) . '</div>';
+          'items' => $items,
+          'attributes' => array('class' => array('pager')),
+        )) . '</div>';
   }
 }
