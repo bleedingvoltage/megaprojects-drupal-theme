@@ -54,17 +54,39 @@
   width: $zen-grid-width - $zen-gutter-width
 
 //
-// The layout when there is one sidebar
+// The layout when there is only one sidebar, the left one.
 //
 
 .sidebar-first
+  .main
+    background: image-url('sidebar-first-bg.png', false, false) repeat-y transparent top
   #content
     +zen-grid-item(9, 4)
   .region-sidebar-first
     +zen-grid-item(3, 1)
 
+//
+// The layout when there is only one sidebar, the right one.
+//
+
 .sidebar-second
+  .main
+    background: image-url('sidebar-second-bg.png', false, false) repeat-y transparent top
   #content
     +zen-grid-item(9, 1)
   .region-sidebar-second
     +zen-grid-item(3, 10)
+
+//
+// The layout when there are two sidebars.
+//
+
+// .two-sidebars
+//   #content 
+//     @include zen-grid-item(3, 2)
+
+//   .region-sidebar-first
+//     @include zen-grid-item(1, 1)
+
+//   .region-sidebar-second 
+//     @include zen-grid-item(1, 5)
